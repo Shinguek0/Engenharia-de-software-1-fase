@@ -29,6 +29,8 @@ def opr(choice, line):
             A[line][i] = secondHolder[i]
         for i in range (0,4):
             A[lineChange][i] = placeHolder[i]
+    if(choice==4):
+        pass
 
 A = []  # Set 'A' as a list
 choice = 0
@@ -66,7 +68,7 @@ for j in range (0,4):
 while choice!=5:
     l1,l2,l3,l4 = bas()
     line = int(input(f"\nDigite a linha que você deseja alterar:\n<1> - {l1}\n<2> - {l2}\n<3> - {l3}\n<4> - {l4}\n"))-1
-    choice = int(input("Digite que operação você deseja fazer:\n<1> multiplicação <2> divisão <3> trocar\n"))
+    choice = int(input("Digite que operação você deseja fazer:\n<1> multiplicação <2> divisão <3> trocar com outra linha <4> fazer operação com outra linha\n"))
     opr(choice,line)
 
 printMatriz()
