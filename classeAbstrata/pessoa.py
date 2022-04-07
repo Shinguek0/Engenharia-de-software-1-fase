@@ -2,7 +2,7 @@
 from abc import ABC, abstractmethod
 
 #cria uma classe abstrata chamada pessoa
-class Pessoa():
+class Pessoa(ABC):
     #Define suas caracteristicas
     nome = 'Sem nome'
     idade = 0
@@ -35,13 +35,11 @@ class Desempregado(Pessoa):
 
 #cria a classe empresario que herda Empregado, que por sua vez herda Pessoa
 class Empresario(Empregado):
-    def __init__(self, nome, idade, sexo, salario, tempoTrabalho):
+    def __init__(self, nome, idade, sexo, salario):
         self.nome = nome
         self.idade = idade
         self.sexo = sexo
         self.__salario = salario
-        #caso tirar a calsse abstrata empresario, cria salario igual a classe tempoTrabalho, ela foi criada meramente como teste
-        self.tempoTrabalho = tempoTrabalho #Variavel nao ultilizada criada so para teste
     
     #encapsula salario
     @property
@@ -50,10 +48,10 @@ class Empresario(Empregado):
 
     @salario.setter
     def salario(self, novo_salario): 
-        raise ValueError("Impossivel alterar salario diretamente. Use a funcao reajusteSalario().")
+        raise ValueError("Impossivel alterar salario diretamente. Use a funcao reajuteSalario().")
 
     #funçoes que vem das classes abstratas
-    def reajusteSalario(self, aumento):
+    def reajuteSalario(self, aumento):
         #aumenta o salario recebendo uma porcentagem de aumento
         self.__salario += self.__salario*(aumento/100)
 
