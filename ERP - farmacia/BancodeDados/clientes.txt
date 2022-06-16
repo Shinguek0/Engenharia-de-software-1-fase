@@ -1,0 +1,3 @@
+0,Cliente teste,0,0,cliente@email.com,0,0,Terra,0,0,0
+1,Cliente teste,0,0,cliente@email.com,0,0,Terra,0,0,0
+2,Cliente teste,0,0,cliente@email.com,0,0,Terra,0,0,0

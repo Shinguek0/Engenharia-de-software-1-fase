@@ -1,0 +1,2 @@
+Remedio,0,20/10/2022,Anestesico,1,Bula,nenhum
+Remedio,1,20/10/2022,Anestesico,1,Bula,nenhum
