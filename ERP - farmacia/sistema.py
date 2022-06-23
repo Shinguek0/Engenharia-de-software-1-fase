@@ -28,19 +28,6 @@ class Usuario(Cadastro):
         #fecha o arquivo
         arquivo.close
 
-    def login(self, usuarioL, senhaL):
-        self.usuarioL = usuarioL
-        self.senhaL = senhaL
-        arquivo = open("./BancodeDados/usuarios.txt", "r")
-        listaUsuario = arquivo.readlines()
-        arquivo.close
-        login = False
-        for i in listaUsuario:
-            nome, user, password, cpf, numero, idade = i.split(",")
-            if (usuarioL == user) and (senhaL == password):
-                login = True
-        return login
-
 class Cliente(Cadastro):
     def __init__(self, nome, idade, cpf, email, rg, cep, endereco, ddd, tel1, tel2):
         self.nome = nome
@@ -87,7 +74,7 @@ class Produto(Cadastro):
         arquivo.write(f"{self.nome},{self.codigo},{self.data},{self.tipo},{self.qtd},{self.bula},{self.fabricante}\n")
         arquivo.close
 
-def lerProdutos():
+def lerProdutos(cod):
     arquivo = open("./BancodeDados/produtos.txt", "r")
     listaProdutos = arquivo.readlines()
     arquivo.close
@@ -96,6 +83,7 @@ def lerProdutos():
     listaProdutosE = arquivo.readlines()
     arquivo.close
     estoque = 0
+    np,cp,dp,tp,qp,bp,fp = "semnada"
     for i in listaProdutos:
         for j in listaProdutosE:
             nomeE, codigoE, dataE, tipoE, qtdE, bulaE, fabricanteE = j.split(",")
@@ -104,15 +92,43 @@ def lerProdutos():
                 estoque = qtd
             if(codigoE == codigo):
                 estoque = int(estoque) - int(qtdE)
+            if(cod == codigo):
+                np,cp,dp,tp,qp,bp,fp = nome,codigo,data,tipo,qtd,bula,fabricante
         print(f"Nome do remedio: {nome}\n codigo: {codigo}\n data: {data}\n tipo: {tipo}\n estoque: {estoque}\n bula: {bula}\n fabricante: {fabricante}\n")
         print("-"*10)
         estoque = 0
+    return np,cp,dp,tp,qp,bp,fp
 
 def execluirProduto(nome, codigo, data, tipo, qtd, bula, fabricante):
     arquivo = open("./BancodeDados/produtosExcluidos.txt", "a")
     arquivo.write(f"{nome},{codigo},{data},{tipo},{qtd},{bula},{fabricante}\n")
     arquivo.close
-        
+
+
+def login(usuarioL, senhaL):
+    arquivo = open("./BancodeDados/usuarios.txt", "r")
+    listaUsuario = arquivo.readlines()
+    arquivo.close
+    login = False
+    for i in listaUsuario:
+        nome, user, password, cpf, numero, idade = i.split(",")
+        if (usuarioL == user) and (senhaL == password):
+            login = True
+    return login
+
+
+
+""" def procurar(cod):
+    arquivo = open("./BancodeDados/produtos.txt", "r")
+    listaProdutos = arquivo.readlines()
+    arquivo.close
+    np,cp,dp,tp,qp,bp,fp = "semnada"
+    for i in listaProdutos:
+        nome, codigo, data, tipo, qtd, bula, fabricante = i.split(",")
+        if(cod == codigo):
+            np,cp,dp,tp,qp,bp,fp = nome,codigo,data,tipo,qtd,bula,fabricante
+    
+    return np,cp,dp,tp,qp,bp,fp """
 
 #cadastroUsuario("Ricardo","B","B",1,123,12)
 
@@ -125,6 +141,9 @@ else:
 
 #cadastroProduto("Remedio",1,"20/10/2022","Anestesico",1,"Bula","nenhum")
 
-lerProdutos()
+#lerProdutos('não')
+#print(lerProdutos("não"))
 
 #execluirProduto("Remedio",1,"20/10/2022","Anestesico",2,"Bula","nenhum")
+
+#print(procurar(0))
