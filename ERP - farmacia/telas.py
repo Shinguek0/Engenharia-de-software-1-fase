@@ -1,5 +1,5 @@
 import PySimpleGUI as sg   
-from cadastroUsuario import Usuario, Cliente, Produto, lerProdutos
+from sistema import Usuario, Cliente, Produto, lerProdutos
 #nome, usuario, senha, cpf, numero, idade
 cadastroUsuario =  [[sg.T('Cadastro De Usuario')],
                     [sg.T('Nome'),

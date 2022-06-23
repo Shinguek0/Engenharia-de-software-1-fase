@@ -1,3 +1,4 @@
 0,Cliente teste,0,0,cliente@email.com,0,0,Terra,0,0,0
 1,Cliente teste,0,0,cliente@email.com,0,0,Terra,0,0,0
 2,Cliente teste,0,0,cliente@email.com,0,0,Terra,0,0,0
+3,Belone Dorotti,12,1,email@email.email,2,3,ali o,48,123,456

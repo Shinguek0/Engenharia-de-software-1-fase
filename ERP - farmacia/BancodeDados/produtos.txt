@@ -1,2 +1,4 @@
 Remedio,0,20/10/2022,Anestesico,1,Bula,nenhum
 Remedio,1,20/10/2022,Anestesico,1,Bula,nenhum
+pilula do dia seguinte,3,dia seguinte,remedio,None,Oque nao mata te fortalece,eu mesmo
+teste,123,aasd,asda,213,asdas,asd
