@@ -1,0 +1,5 @@
+Gabriel Ferreira,1,20,P,8000,4,R,
+Jorge,2,10,P,3000,3,R,
+ricardo,1,3,D,1500,5,R,
+Vinicius,1234,10,P,5000,5,F,
+Vinicius,1234,4,S,800,2,A,
